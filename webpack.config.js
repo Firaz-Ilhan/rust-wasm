@@ -14,8 +14,13 @@ module.exports = {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
     },
+
     module: {
         rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -23,7 +28,7 @@ module.exports = {
                     loader: "babel-loader"
                 }
             }
-        ]
+        ],
     },
     mode: "development"
 };
