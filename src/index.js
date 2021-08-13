@@ -1,12 +1,16 @@
 const wasm = import("../pkg/rust_wasm");
 import ReactDOM from "react-dom";
+import Header from "./components/Header";
+import Test from "./components/Test";
+import './index.css';
 
 wasm.then(wasm => {
   const App = () => {
     return (
       <div>
-        <h1>wasm test</h1>
-        <button onClick={wasm.greet}>very heavy computation</button>
+        <Header title="Rust webassembly test" />
+        <button onClick={wasm.greet}>Hello from rust</button>
+        <Test func={wasm.fib} title="Fibonacci sequence" />
       </div>
     );
   };
