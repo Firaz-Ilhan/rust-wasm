@@ -16,15 +16,18 @@ const Test = ({ func, title }) => {
     }
 
     return (
-        <div className="test">
-            <h2>{title}</h2>
-            <input type="number" value={value} onChange={e => setValue(e.target.value)} onKeyPress={handleKeyPress} />
-
-            <button onClick={addResult}>
-                Calculate
-            </button>
-
-            <p>Result: {result}</p>
+        <div>
+            <div className="card">
+                <div>
+                    <h2>{title}</h2>
+                    <div className="input">
+                        <input className="input_field" type="number" placeholder="enter a number"
+                            value={value} onChange={e => setValue(e.target.value)} onKeyPress={handleKeyPress} />
+                        <button className="card_btn" onClick={addResult}>Calculate</button>
+                    </div>
+                    <p className="result">Result: {result}</p>
+                </div>
+            </div>
         </div>
     );
 }

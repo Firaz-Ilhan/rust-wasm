@@ -9,8 +9,9 @@ wasm.then(wasm => {
     return (
       <div>
         <Header title="Rust webassembly test" />
-        <button onClick={wasm.greet}>Hello from rust</button>
-        <Test func={wasm.fib} title="Fibonacci sequence" />
+        <div className="card_wrapper">
+          <Test func={wasm.fib} title="Fibonacci sequence" />
+        </div>
       </div>
     );
   };
