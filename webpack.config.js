@@ -11,7 +11,6 @@ module.exports = {
         path: path.resolve(__dirname, "public/dist")
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
         compress: true,
     },
 
